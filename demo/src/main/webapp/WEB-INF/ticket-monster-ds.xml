@@ -19,19 +19,12 @@
         this in META-INF/persistence.xml -->
     <datasource jndi-name="java:jboss/datasources/ticket-monsterDS"
         pool-name="ticket-monster" enabled="true" use-java-context="true">
-        <connection-url>jdbc:postgresql://localhost:5432/ticket-monster</connection-url>
-        <driver>postgresql</driver>
-        <pool>
-        	<min-pool-size>1</min-pool-size>
-        	<max-pool-size>10</max-pool-size>
-        </pool>
+        <connection-url>jdbc:h2:mem:ticket-monster;DB_CLOSE_ON_EXIT=FALSE;DB_CLOSE_DELAY=-1</connection-url>
+        <driver>h2</driver>
         <security>
-        	<user-name>dbuser</user-name>
-        	<password>password</password>
+            <user-name>sa</user-name>
+            <password>sa</password>
         </security>
-        <validation>
-        	<check-valid-connection-sql>SELECT 1</check-valid-connection-sql>
-        </validation>
     </datasource>
 </datasources>
  
